@@ -1,2 +1,2 @@
 # ml-challenge
-API Rest para detectar ADN mutante
+API Rest para ayudar al amigo Magneto a detectar ADN mutante
