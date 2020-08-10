@@ -43,7 +43,7 @@ public class DnaTestStastDB implements DnaTestStats {
 		Map<String, Object> result = (Map<String, Object>) jdbcTemplate.queryForMap(GET_STATS);
 		count_mutant_dna = (long) result.get("count_mutant_dna");
 		count_human_dna = (long) result.get("count_humna_dna");
-		ratio = (BigDecimal) result.get("ratio");
+		ratio = ((BigDecimal) result.get("ratio") != null) ? (BigDecimal) result.get("ratio") : new BigDecimal(0.00);
 		
 		return new MutantStat(count_mutant_dna, count_human_dna, ratio);                
 	}
