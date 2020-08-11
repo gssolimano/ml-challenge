@@ -1,6 +1,7 @@
 package com.magneto.MutantAnalyzer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,7 +11,6 @@ public class MutantAnalyzerService {
     private final DnaTestStats dnaTestStats;	
 
     @Autowired
-    //MutantService(final MutabilityAnalysisProcessor mutabilityAnalysisProcessor, StatsRepository statsRepository) {
     MutantAnalyzerService(final MutantAnalyzerProcess mutantAnalyzeProcess, final DnaTestStats dnaTestStats) {
         this.mutantAnalyzeProcess = mutantAnalyzeProcess;
         this.dnaTestStats = dnaTestStats;
@@ -25,6 +25,7 @@ public class MutantAnalyzerService {
 		return isMutant;
 	}
 	
+	@Cacheable(value = "statCache", key = "#root.methodName")
 	public MutantStat getMutantsRatio() {
         return dnaTestStats.getDnaTestRatio();
     }
