@@ -43,9 +43,9 @@ OK (200) | En caso de que la matriz de ADN analizada sea mutante
 FORBIDDEN (403) | En caso de que la matriz ADN analizada sea de un NO mutante. 
 BAD REQUEST (400) | En caso de que la matriz ADN no sea valida.
 
-### /stats
+### /stat
 ```
-https://meli-gss.appspot.com/stats
+https://meli-gss.appspot.com/stat
 ```
 #### Request
 + Method: GET
@@ -72,7 +72,7 @@ https://meli-gss.appspot.com/stats
 
 Ejemplo de response:
 ```
-  { "ratio": "0.35", "count_human_dna": 17, "count_mutant_dna": 9 }
+  { "count_human_dna": 17, "count_mutant_dna": 9, "ratio": "0.35" }
 ```
 
 ## Implementación, desarrollo y testing 
