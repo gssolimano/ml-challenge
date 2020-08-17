@@ -22,7 +22,6 @@ public class DnaAnalyzer {
 			validateColumn(i);
 		}
 		
-		//Mejorar validación diagonal. Que haga todas las diagonales
 		if (!validateMinSequences()) {
 			validateDiagonal();
 		}

@@ -25,23 +25,4 @@ public class CacheConfiguration {
 		bean.setShared(true);
 		return bean;
 	}
-	
-	
-	
-	
-	/*
-	@Bean 
-	public CacheManager cacheManager() {
-        return new EhCacheCacheManager(cacheMangerFactory().getObject());
-    }
-
-    @Bean
-    public EhCacheManagerFactoryBean cacheMangerFactory() {
-        EhCacheManagerFactoryBean bean = new EhCacheManagerFactoryBean();
-        bean.setConfigLocation(new ClassPathResource("ehcache.xml"));
-        bean.setShared(true);
-        return bean;
-    }
-    */
-
 }

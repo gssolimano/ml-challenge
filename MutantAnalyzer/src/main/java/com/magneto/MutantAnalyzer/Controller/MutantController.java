@@ -24,15 +24,12 @@ public class MutantController {
 	
 	@PostMapping
 	ResponseEntity<?> isMutant(@RequestBody DnaTest request) {
-		System.out.println(request);
-		
+
 		boolean isMutant = mutantAnalyzerService.isMutant(request);
 		
 		if (isMutant) {
-			System.out.println("Es mutante");
 			return new ResponseEntity(HttpStatus.OK);
 		} else {
-			System.out.println("Es humano");
 			return new ResponseEntity(HttpStatus.FORBIDDEN);
 		}
 		
